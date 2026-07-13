@@ -1,17 +1,22 @@
-class animal{
-    animal(String name){
-        System.out.println("animal:"+name);
+abstract class Animal {
+    abstract void sound();
+
+    void eat() {
+        System.out.println("Animal is eating");
     }
 }
-class dog extends animal{
-    dog(){
-        super("tommy");
-        System.out.println("dog constructor");
-    }
-}
+
+class Dog extends Animal {
     
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
 public class main {
-    public static void main(String[]args){
-    dog d = new  dog();
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.sound();
+        d.eat();
     }
 }
